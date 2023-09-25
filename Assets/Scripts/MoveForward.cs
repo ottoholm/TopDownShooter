@@ -11,7 +11,7 @@ public class MoveForward : MonoBehaviour
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
         //liikku tasasesti eteenpäin
         transform.Translate(Vector3.forward * speed * Time.deltaTime);

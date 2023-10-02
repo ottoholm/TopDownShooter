@@ -1,28 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckCollissions : MonoBehaviour
 {
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Jäbä törmäs tälläseen jutuskaan " + other.name);
+    private Score scoreScript;
 
+    void Start()
+    {
+        scoreScript = GameObject.Find("ScoreBoard").GetComponent<Score>();
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        scoreScript.scoreValue++;
+        Debug.Log("Jäbä törmäs tälläseen " + other.name );
         // Destroy both objects
         Destroy(other.gameObject); // other (food)
         Destroy(gameObject);      // ourselves (animal)
     }
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

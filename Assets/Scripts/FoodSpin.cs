@@ -17,6 +17,6 @@ public class FoodSpin : MonoBehaviour
     void Update()
     {
         //paska pyörii
-        transform.Rotate(xAngle, yAngle, zAngle);
+        transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime);
     }
 }
